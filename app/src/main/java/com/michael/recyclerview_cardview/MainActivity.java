@@ -109,7 +109,12 @@ public class MainActivity extends AppCompatActivity
                 mAdapter.notifyDataSetChanged();
 
 
-                mExampleList.add(new ExampleItem(R.drawable.ic_android, "Emma Watson", "Alia Bhatt"));
+                mExampleList.add(new ExampleItem(R.drawable.ic_android, "ghostprotocol1", "ghostprotocol2"));
+
+                mExampleList.add(new ExampleItem(R.drawable.ic_android, "ghostprotocol1", "ghostprotocol2"));
+
+                mExampleList.add(new ExampleItem(R.drawable.ic_android, "ghostprotocol1", "ghostprotocol2"));
+
 
                 buildRecyclerView();
 

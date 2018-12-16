@@ -26,10 +26,16 @@ public class MainActivity extends AppCompatActivity
     private EditText editTextInsert;
     private EditText editTextRemove;
 
+    private TextView textView4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        textView4 = findViewById(R.id.textView4);
+
+        textView4.setVisibility(View.GONE);
 
         createExampleList();
         buildRecyclerView();
@@ -109,14 +115,28 @@ public class MainActivity extends AppCompatActivity
                 mAdapter.notifyDataSetChanged();
 
 
-                mExampleList.add(new ExampleItem(R.drawable.ic_android, "ghostprotocol1", "ghostprotocol2"));
+                if(mExampleList.isEmpty())
+                {
+                    textView4.setVisibility(View.VISIBLE);
+                    mRecyclerView.setVisibility(View.GONE);
+                    textView4.setText("List is Empty");
 
-                mExampleList.add(new ExampleItem(R.drawable.ic_android, "ghostprotocol1", "ghostprotocol2"));
 
-                mExampleList.add(new ExampleItem(R.drawable.ic_android, "ghostprotocol1", "ghostprotocol2"));
+                }else {
+
+                    mExampleList.add(new ExampleItem(R.drawable.ic_android, "ghostprotocol1", "ghostprotocol2"));
+
+                    mExampleList.add(new ExampleItem(R.drawable.ic_android, "ghostprotocol1", "ghostprotocol2"));
+
+                    mExampleList.add(new ExampleItem(R.drawable.ic_android, "ghostprotocol1", "ghostprotocol2"));
 
 
-                buildRecyclerView();
+                    buildRecyclerView();
+
+                }
+
+
+
 
 
 
